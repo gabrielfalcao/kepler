@@ -87,14 +87,10 @@ distribute.global:
     - name: distribute==0.6.31
 
 
-gunicorn:
-  pip.installed
-
-
 {{ pillar['venv_path'] }}:
   virtualenv.manage:
     - no_site_packages: true
-    - clear: false
+    - clear: true
     - require:
       - pkg: app-pkgs
 

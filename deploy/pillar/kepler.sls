@@ -23,6 +23,7 @@ github_users:
   gabrielfalcao: gabrielfalcao
   bueller: benjie
   axelav: axel
+  saadiq: saadiq
 
 environment:
   PORT: "4200"
@@ -31,5 +32,5 @@ environment:
   DOMAIN: "kepler.propellr.com"
   REDIS_URI: "redis://localhost:6379"
   PATH: "/srv/venv/bin:$PATH"
-  PYTHONPATH: "/srv/app:/srv/venv/lib/python2.7/site-packages:$PYTHONPATH"
+  PYTHONPATH: "/srv/app:/srv/venv/lib/python2.7/site-packages:/srv/venv/lib/python2.7:$PYTHONPATH"
   SQLALCHEMY_DATABASE_URI: "mysql://root@localhost/kepler"
