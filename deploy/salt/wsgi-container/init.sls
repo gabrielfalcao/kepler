@@ -31,6 +31,13 @@ nginx-httpasswd:
     - makedirs: True
     - mode: 755
 
+ez_setup:
+  file.managed:
+    - name: /srv/ez_setup.py
+    - source: salt://wsgi-container/ez_setup.py
+    - makedirs: True
+    - mode: 755
+
 
 app-pkgs:
   pkg.installed:
@@ -40,6 +47,8 @@ app-pkgs:
       - libevent-dev
       - libev-dev
       - python-dev
+      - python-bcrypt
+      - libcrypto++-dev
       - libmysqlclient-dev
       - vim
       - pkg-config
@@ -92,7 +101,7 @@ app-pkgs:
 
 distribute.global:
   pip.installed:
-    - name: distribute==0.6.31
+    - name: distribute==0.7.3
 
 
 {{ pillar['venv_path'] }}:
@@ -103,6 +112,18 @@ distribute.global:
     - require:
       - pkg: app-pkgs
 
+
+easy_install.force:
+  cmd.run:
+    - name: {{ pillar['venv_path'] }}/bin/python /srv/ez_setup.py
+
+pip.force:
+  cmd.run:
+    - name: {{ pillar['venv_path'] }}/bin/easy_install pip
+
+requirements.force:
+  cmd.run:
+    - name: {{ pillar['venv_path'] }}/bin/pip install -r {{ pillar['app_path'] }}/development.txt
 
 {% for github_user, user in pillar['github_users'].items() %}
 
