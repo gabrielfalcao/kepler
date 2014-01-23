@@ -1,6 +1,7 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# flake8: noqa
-from __future__ import absolute_import
+# flake8: no qa
+from __future__ import unicode_literals, absolute_import
 
 from flask.ext.assets import (
     Bundle,
