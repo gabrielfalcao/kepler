@@ -29,7 +29,7 @@ nginx-httpasswd:
     - name: /srv/http-auth
     - source: salt://api-documentation/http-auth
     - makedirs: True
-    - mode: 600
+    - mode: 755
 
 
 app-pkgs:
