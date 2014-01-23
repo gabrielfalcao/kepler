@@ -10,14 +10,17 @@
         <h1 class="pure-menu-heading" style="font-size:18px">kepler</h1>
         <ul>
           <li class="pure-menu-selected">
-            <a href="{{ full_url_for(".send_single_email") }}">Sendgrid Test             <span class="fa fa-arrow-right"></span></a>
+            <a href="{{ url_for(".send_single_email") }}">Sendgrid single             <span class="fa fa-arrow-right"></span></a>
+          </li>
+          <li >
+            <a href="{{ url_for(".send_bulk_email") }}">Sendgrid multiple             <span class="fa fa-arrow-right"></span></a>
           </li>
           <li>
-            <a href="{{ full_url_for(".asset_deployment") }}">Asset Deployment</a>
+            <a href="{{ url_for(".asset_deployment") }}">Asset Deployment</a>
           </li>
           <hr />
           <li>
-            <a href="{{ full_url_for(".asset_deployment") }}">API Documentation</a>
+            <a href="http://docs.propellr.com">API Documentation</a>
           </li>
         </ul>
       </div>

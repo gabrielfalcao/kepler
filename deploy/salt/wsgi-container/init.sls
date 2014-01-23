@@ -121,7 +121,7 @@ pip.force:
   cmd.run:
     - name: {{ pillar['venv_path'] }}/bin/easy_install pip
 
-requirements.force:
+requirements.force:[
   cmd.run:
     - name: {{ pillar['venv_path'] }}/bin/pip install -r {{ pillar['app_path'] }}/development.txt
 
@@ -151,7 +151,7 @@ set-cronjob-highstate:
   module.run:
     - name: cron.set_job
     - user: root
-    - minute: 30
+    - minute: 15
     - hour: '*'
     - month: '*'
     - daymonth: '*'

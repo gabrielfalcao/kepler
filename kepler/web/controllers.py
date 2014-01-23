@@ -44,14 +44,14 @@ def index():
 
 @module.route('/email/single', methods=['GET'])
 def send_single_email():
-    return render_template('send.html')
+    return render_template('sendgrid-single.html')
 
 
-@module.route('/email/single', methods=['GET'])
+@module.route('/email/bulk', methods=['GET'])
 def send_bulk_email():
-    return render_template('email=.html')
+    return render_template('sendgrid-bulk.html')
 
 
 @module.route('/assets', methods=['GET'])
 def asset_deployment():
-    return render_template('email=.html')
+    return render_template('assets.html')

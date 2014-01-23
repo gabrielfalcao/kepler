@@ -1,0 +1,36 @@
+{% extends "purebase.html" %}
+{% block inner_body %}
+<div class="header">
+  <h1>Asset deployment</h1>
+</div>
+<div class="content">
+<table class="pure-table pure-table-striped">
+    <thead>
+        <tr>
+            <th>Project</th>
+            <th>Version</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <form class="pure-form">
+            <td>Dashboard frontend</td>
+            <td> <input type="text" name="version" placeholder="0.0.1" /> </td>
+            <td>
+              <input class="pure-button button-success" type="submit" name="deploy" value="Deploy" />
+            </td>
+          </form>
+        </tr>
+        <tr>
+          <form class="pure-form">
+            <td>Deal Creator</td>
+            <td> <input type="text" name="version" placeholder="0.0.1" /> </td>
+            <td>
+              <input class="pure-button button-success" type="submit" name="deploy" value="Deploy" />
+            </td>
+          </form>
+        </tr>
+</div>
+{% endblock %}
