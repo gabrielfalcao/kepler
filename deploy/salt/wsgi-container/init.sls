@@ -24,6 +24,14 @@ ssh_config:
 {% endfor %}
 
 
+nginx-httpasswd:
+  file.managed:
+    - name: /srv/http-auth
+    - source: salt://api-documentation/http-auth
+    - makedirs: True
+    - mode: 600
+
+
 app-pkgs:
   pkg.installed:
     - names:
@@ -91,7 +99,7 @@ distribute.global:
   virtualenv.manage:
     - requirements: {{ pillar['app_path'] }}/requirements.txt
     - no_site_packages: true
-    - clear: true
+    - clear: false
     - require:
       - pkg: app-pkgs
 
