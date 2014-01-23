@@ -89,20 +89,11 @@ distribute.global:
 
 {{ pillar['venv_path'] }}:
   virtualenv.manage:
+    - requirements: {{ pillar['app_path'] }}/requirements.txt
     - no_site_packages: true
     - clear: true
     - require:
       - pkg: app-pkgs
-
-
-ensure.curdling:
-  pip.installed:
-    - name: curdling
-    - bin_env: {{ pillar['venv_path'] }}
-
-curd.install:
-  cmd.run:
-    - name: {{ pillar['venv_path'] }}/bin/curd -l DEBUG install -r {{ pillar['app_path'] }}/requirements.txt
 
 
 {% for github_user, user in pillar['github_users'].items() %}
