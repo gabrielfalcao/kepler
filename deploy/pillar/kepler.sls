@@ -1,7 +1,7 @@
 app_name: kepler
 user: ubuntu
 
-repository: git@github.com:propellr/kepler.git
+repository: git@github.com:gabrielfalcao/kepler.git
 revision: master
 
 base_path: "/srv"
@@ -21,8 +21,8 @@ log_path: "/var/log"
 
 github_users:
   gabrielfalcao: gabrielfalcao
-  alscardoso: andre
-  clarete: lincoln
+  bueller: benjie
+  axelav: axel
 
 environment:
   PORT: "4200"
@@ -31,5 +31,5 @@ environment:
   DOMAIN: "kepler.propellr.com"
   REDIS_URI: "redis://localhost:6379"
   PATH: "/srv/venv/bin:$PATH"
-  PYTHONPATH: "/srv/app:/src/venv/lib/python2.7/site-packages:$PYTHONPATH"
+  PYTHONPATH: "/srv/app:/srv/venv/lib/python2.7/site-packages:$PYTHONPATH"
   SQLALCHEMY_DATABASE_URI: "mysql://root@localhost/kepler"

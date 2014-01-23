@@ -87,6 +87,10 @@ distribute.global:
     - name: distribute==0.6.31
 
 
+gunicorn:
+  pip.installed
+
+
 {{ pillar['venv_path'] }}:
   virtualenv.manage:
     - no_site_packages: true
@@ -102,7 +106,7 @@ ensure.curdling:
 
 curd.install:
   cmd.run:
-    - name: {{ pillar['venv_path'] }}/bin/curd -l DEBUG install -f -r {{ pillar['app_path'] }}/requirements.txt
+    - name: {{ pillar['venv_path'] }}/bin/curd -l DEBUG install -r {{ pillar['app_path'] }}/requirements.txt
 
 
 {% for github_user, user in pillar['github_users'].items() %}

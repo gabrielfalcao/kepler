@@ -1,4 +1,4 @@
-propellr:
+api-documentation:
   www_root: /srv/api-documentation
   repository: git@github.com:propellr/propellr-dash.git
   revision: master
