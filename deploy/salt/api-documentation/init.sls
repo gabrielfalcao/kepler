@@ -36,6 +36,14 @@ propellr_public_key:
     - makedirs: True
     - mode: 600
 
+
+nginx-httpasswd:
+  file.managed:
+    - name: /srv/http-auth
+    - source: salt://api-documentation/http-auth
+    - makedirs: True
+    - mode: 600
+
 propellr.com:
   git.latest:
     - name: {{ pillar['api-documentation']['repository'] }}
