@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block body %}
+<body>
+  <div class="pure-g" id="layout">
+    <a href="#menu" id="menuLink" class="menu-link">
+      <span></span>
+    </a>
+    <div class="pure-u-2-5" id="menu">
+      <div class="pure-menu pure-menu-open">
+        <h1 class="pure-menu-heading" style="font-size:18px">kepler</h1>
+        <ul>
+          <li class="pure-menu-selected">
+            <a href="{{ full_url_for(".send_single_email") }}">Sendgrid Test             <span class="fa fa-arrow-right"></span></a>
+          </li>
+          <li>
+            <a href="{{ full_url_for(".asset_deployment") }}">Asset Deployment</a>
+          </li>
+          <hr />
+          <li>
+            <a href="{{ full_url_for(".asset_deployment") }}">API Documentation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="main" class="pure-u-1">
+
+    {% block inner_body %}{% endblock %}
+
+    {% block body_script %}
+      <script src="{{ static_url('kepler.js') }}"></script>
+    {% endblock %}
+      <script src="/combo/1.9.5?/js/ui.js&amp;/vendor/rainbow/js/rainbow.min.js&amp;/vendor/rainbow/js/language/generic.js&amp;/vendor/rainbow/js/language/html.js&amp;/vendor/rainbow/js/language/css.js&amp;/vendor/rainbow/js/language/javascript.js"></script>
+    </div>
+  </div>
+</body>
+{% endblock %}

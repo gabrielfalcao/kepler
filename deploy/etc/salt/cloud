@@ -1,0 +1,20 @@
+providers:
+  bong-ec2:
+    minion:
+      master: kepler.propellr.com
+
+    # because master is hosted in EC2, too, we can use private ips :)
+    ssh_interface: private_ips
+
+    id: AKIAJBSYHE765HXV4RJA
+    key: 'Fm7FqWIWCUSZh1FKrD1h3TiKyWL1K/Y+OWlA8aCF'
+
+    private_key: /etc/salt/propellr-master.pem
+    keyname: propellr-master
+    securitygroup:
+      - default
+      - salt
+
+    ssh_username: ubuntu
+
+    provider: ec2
